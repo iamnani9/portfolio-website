@@ -9,189 +9,163 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-  
+  <div class="particles" id="particles-js"></div>
   <header class="header">
-    <div class="particles" id="particles-js"></div>
     <nav class="navbar">
-      <div class="logo" data-text="NANI">NANI</div>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link"><span>About</span></a></li>
-        <li><a href="#projects" class="nav-link"><span>Projects</span></a></li>
-        <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
-        <li><button id="mode-toggle" aria-label="Toggle dark mode">🌗</button></li>
-      </ul>
+      <div class="logo">NANI</div>
       <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><button id="mode-toggle">🌓</button></li>
+      </ul>
     </nav>
     <div class="hero">
       <div class="hero-content">
         <div class="profile-container">
-          <div class="profile-border"></div>
-          <img src="images/profile.jpg" alt="Nani" class="profile-img" loading="lazy"/>
+          <img src="images/profile.jpg" alt="Nani" class="profile-img"/>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring delay"></div>
         </div>
         <h1 class="hero-title">
-          <span class="title-line">Hi, I'm</span>
-          <span class="title-name"><span>Nani</span></span>
+          <span class="title-line">Hi, I'm <span class="highlight">Nani</span></span>
+          <span class="title-line typing-text"></span>
         </h1>
-        <p class="hero-subtitle" data-text="ECE Student | Future Developer | Self-Learner">ECE Student | Future Developer | Self-Learner</p>
+        <p class="hero-subtitle">ECE Student | Future Developer | Self-Learner</p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View Projects</a>
           <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
       </div>
       <div class="scroll-down">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-        <div class="arrows">
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-        </div>
+        <span class="scroll-text">Scroll Down</span>
+        <div class="scroll-arrow"></div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="about" class="section">
-      <div class="section-header">
-        <h2 class="section-title"><span>👋</span> About Me</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p class="intro-text">
-            I'm Swami (aka Nani), a first-year BTech ECE student passionate about
-            <strong>software development</strong> and <strong>problem solving</strong>.
-          </p>
-          <p>
-            I love building things with Python, web technologies, and learning beyond the classroom. My journey in tech started when I built my first Discord bot, and I've been hooked ever since!
-          </p>
-          <div class="skills">
-            <h3>Skills & Interests</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-python"></i></div>
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                <span>HTML/CSS</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fas fa-code"></i></div>
-                <span>Problem Solving</span>
-              </div>
+  <section id="about" class="section">
+    <div class="section-header">
+      <h2>About Me</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm Swami (aka Nani), a first-year BTech ECE student passionate about
+          <strong>software development</strong> and <strong>problem solving</strong>. I love building things with Python, web technologies, and learning beyond the classroom.
+        </p>
+        <div class="skills">
+          <h3>My Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code"></i>
+              <span>Problem Solving</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="section">
-      <div class="section-header">
-        <h2 class="section-title"><span>💻</span> Projects</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="projects-grid">
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-music"></i></div>
-          <h3>🎵 Viva Music Bot</h3>
-          <p>Discord music bot using Lavalink & discord.js with advanced queue system and audio filters</p>
-          <div class="card-footer">
-            <a href="https://github.com/iamnani9/Viva-Music" target="_blank" class="card-link">
-              <span>View on GitHub</span>
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-          <div class="card-bg"></div>
+  <section id="projects" class="section">
+    <div class="section-header">
+      <h2>My Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-music"></i>
         </div>
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>🌐 Portfolio Website</h3>
-          <p>Personal responsive portfolio with animations and dark/light mode, hosted on GitHub Pages</p>
-          <div class="card-footer">
-            <a href="https://iamnani9.github.io/portfolio-website/" target="_blank" class="card-link">
-              <span>Live Site</span>
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-          <div class="card-bg"></div>
-        </div>
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-film"></i></div>
-          <h3>🎬 Netflix Clone</h3>
-          <p>Responsive frontend clone with search, carousel, and video preview functionality</p>
-          <div class="card-footer">
-            <a href="#" class="card-link coming-soon">
-              <span>Coming Soon</span>
-              <i class="fas fa-hourglass-half"></i>
-            </a>
-          </div>
-          <div class="card-bg"></div>
+        <h3>Viva Music Bot</h3>
+        <p>Discord music bot using Lavalink & discord.js with advanced queue management and playlist support.</p>
+        <div class="card-footer">
+          <a href="https://github.com/iamnani9/Viva-Music" target="_blank" class="btn btn-small">
+            <i class="fab fa-github"></i> View Code
+          </a>
         </div>
       </div>
-    </section>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Portfolio Website</h3>
+        <p>Personal responsive portfolio with animations and dark/light mode, hosted on GitHub Pages.</p>
+        <div class="card-footer">
+          <a href="https://iamnani9.github.io/portfolio-website/" target="_blank" class="btn btn-small">
+            <i class="fas fa-external-link-alt"></i> Live Site
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-film"></i>
+        </div>
+        <h3>Netflix Clone</h3>
+        <p>Responsive frontend clone with search functionality, carousel effects, and movie details modal.</p>
+        <div class="card-footer">
+          <a href="#" class="btn btn-small btn-disabled">
+            <i class="fas fa-hourglass-half"></i> Coming Soon
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-      <div class="section-header">
-        <h2 class="section-title"><span>📫</span> Contact Me</h2>
-        <div class="section-divider"></div>
+  <section id="contact" class="section">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-content">
+      <p class="contact-text">Let's connect and collaborate! Feel free to reach out for opportunities or just to say hi.</p>
+      <div class="contact-methods">
+        <a href="mailto:twitternani574@gmail.com" class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>twitternani574@gmail.com</p>
+        </a>
+        <a href="https://github.com/iamnani9" target="_blank" class="contact-card">
+          <i class="fab fa-github"></i>
+          <h3>GitHub</h3>
+          <p>@iamnani9</p>
+        </a>
+        <a href="https://www.linkedin.com/in/swami-nani-148736377/" target="_blank" class="contact-card">
+          <i class="fab fa-linkedin-in"></i>
+          <h3>LinkedIn</h3>
+          <p>Swami Nani</p>
+        </a>
       </div>
-      <p class="contact-subtitle">Let's connect and collaborate! Feel free to reach out.</p>
-      <div class="contact-content">
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" id="name" name="name" required>
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" required>
-            <label for="email">Your Email</label>
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-        <div class="social-links">
-          <h3>Find me on</h3>
-          <ul class="socials">
-            <li>
-              <a href="mailto:twitternani574@gmail.com" class="social-link">
-                <div class="social-icon"><i class="fas fa-envelope"></i></div>
-                <span>Email</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/iamnani9" target="_blank" class="social-link">
-                <div class="social-icon"><i class="fab fa-github"></i></div>
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/swami-nani-148736377/" target="_blank" class="social-link">
-                <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
-                <span>LinkedIn</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
+  <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">NANI</div>
       <div class="footer-links">
@@ -200,18 +174,14 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-socials">
-        <a href="mailto:twitternani574@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/iamnani9" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/swami-nani-148736377/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:twitternani574@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Made with <i class="fas fa-heart pulse"></i> by Nani | © <span id="year"></span></p>
+      <p>Made with <i class="fas fa-heart pulse"></i> by Nani | © 2025 All Rights Reserved</p>
     </div>
   </footer>
-
-  <div class="scroll-top">
-    <i class="fas fa-arrow-up"></i>
-  </div>
 </body>
 </html>
