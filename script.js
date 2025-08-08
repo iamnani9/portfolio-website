@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Set current year in footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+  
   // Dark/Light mode toggle
   const toggle = document.getElementById('mode-toggle');
   const body = document.body;
@@ -8,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (currentTheme) {
     body.classList.add(currentTheme);
     updateThemeVars(currentTheme);
+    toggle.textContent = currentTheme === 'light-mode' ? '🌙' : '☀️';
   }
 
   toggle.addEventListener('click', () => {
@@ -67,28 +71,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Scroll reveal animations
-  const sr = ScrollReveal({
-    origin: 'bottom',
-    distance: '40px',
-    duration: 1000,
-    delay: 200,
-    reset: true
+  // Custom cursor
+  const cursor = document.querySelector('.cursor');
+  const cursorFollower = document.querySelector('.cursor-follower');
+  const links = document.querySelectorAll('a, button, .card, .skill-item, .service-card, .info-card');
+  
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    
+    gsap.to(cursorFollower, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.5,
+      ease: 'power1.out'
+    });
+  });
+  
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      cursor.classList.add('cursor-active');
+      cursorFollower.classList.add('cursor-follower-active');
+    });
+    
+    link.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor-active');
+      cursorFollower.classList.remove('cursor-follower-active');
+    });
   });
 
-  sr.reveal('.section-header, .about-content, .projects-grid, .contact-content', {
-    interval: 200
+  // GSAP Animations
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Animate sections on scroll
+  gsap.utils.toArray('.section').forEach(section => {
+    gsap.from(section, {
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power2.out'
+    });
   });
-
-  sr.reveal('.card', {
-    interval: 200,
-    origin: 'bottom',
-    distance: '30px'
+  
+  // Animate cards individually
+  gsap.utils.toArray('.card, .service-card').forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      },
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      delay: i * 0.1,
+      ease: 'power2.out'
+    });
   });
 
   // Typing animation
   const typingText = document.querySelector('.typing-text');
-  const texts = ["Web Developer", "Problem Solver", "Tech Enthusiast"];
+  const texts = ["Web Developer", "Problem Solver", "Tech Enthusiast", "ECE Student", "Coding Lover"];
   let textIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -239,5 +287,20 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       header.style.boxShadow = 'none';
     }
+  });
+  
+  // Download CV button
+  document.getElementById('download-resume').addEventListener('click', function(e) {
+    e.preventDefault();
+    // Replace with actual CV download link
+    alert('Download functionality will be added when CV is ready!');
+  });
+  
+  // Contact form submission
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Here you would typically send the form data to a server
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
   });
 });
