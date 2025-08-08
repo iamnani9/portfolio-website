@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nani | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 </head>
 <body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
   <div class="particles" id="particles-js"></div>
   <header class="header">
     <nav class="navbar">
@@ -20,7 +25,9 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><button id="mode-toggle">🌓</button></li>
       </ul>
@@ -31,6 +38,7 @@
           <img src="images/profile.jpg" alt="Nani" class="profile-img"/>
           <div class="pulse-ring"></div>
           <div class="pulse-ring delay"></div>
+          <div class="glow-effect"></div>
         </div>
         <h1 class="hero-title">
           <span class="title-line">Hi, I'm <span class="highlight">Nani</span></span>
@@ -38,8 +46,8 @@
         </h1>
         <p class="hero-subtitle">ECE Student | Future Developer | Self-Learner</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          <a href="#contact" class="btn btn-primary pulse-on-hover">Hire Me</a>
+          <a href="#" class="btn btn-secondary" id="download-resume">Download CV</a>
         </div>
       </div>
       <div class="scroll-down">
@@ -57,36 +65,104 @@
     <div class="about-content">
       <div class="about-text">
         <p>
-          I'm Swami (aka Nani), a first-year BTech ECE student passionate about
-          <strong>software development</strong> and <strong>problem solving</strong>. I love building things with Python, web technologies, and learning beyond the classroom.
+          I'm Swami (aka Nani), a passionate <strong>BTech ECE student</strong> with a strong inclination towards 
+          <strong>software development</strong>. Despite being in Electronics, I've dedicated myself to mastering 
+          programming and web technologies through self-learning.
         </p>
-        <div class="skills">
-          <h3>My Skills</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <i class="fab fa-python"></i>
-              <span>Python</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-js"></i>
-              <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-html5"></i>
-              <span>HTML5</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-css3-alt"></i>
-              <span>CSS3</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-git-alt"></i>
-              <span>Git</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-code"></i>
-              <span>Problem Solving</span>
-            </div>
+        <p>
+          My journey in coding began with Python and has expanded to full-stack web development. 
+          I love solving complex problems and building elegant solutions that make an impact.
+        </p>
+        <div class="personal-info">
+          <div class="info-item">
+            <span class="info-label">Name:</span>
+            <span class="info-value">Swami Nani</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email:</span>
+            <span class="info-value">twitternani574@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Education:</span>
+            <span class="info-value">BTech in ECE</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">From:</span>
+            <span class="info-value">India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-header">
+      <h2>My Skills</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="skills-container">
+      <div class="skills-category">
+        <h3>Frontend</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="devicon-html5-plain colored"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-css3-plain colored"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-javascript-plain colored"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-react-original colored"></i>
+            <span>React</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3>Backend</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="devicon-nodejs-plain colored"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-express-original colored"></i>
+            <span>Express</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-python-plain colored"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-mongodb-plain colored"></i>
+            <span>MongoDB</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3>Tools & Others</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-github-original colored"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-vscode-plain colored"></i>
+            <span>VS Code</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>Problem Solving</span>
           </div>
         </div>
       </div>
@@ -105,35 +181,107 @@
         </div>
         <h3>Viva Music Bot</h3>
         <p>Discord music bot using Lavalink & discord.js with advanced queue management and playlist support.</p>
+        <div class="tech-used">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Discord.js</span>
+          <span class="tech-tag">Lavalink</span>
+        </div>
         <div class="card-footer">
           <a href="https://github.com/iamnani9/Viva-Music" target="_blank" class="btn btn-small">
             <i class="fab fa-github"></i> View Code
           </a>
+          <a href="#" class="btn btn-small btn-secondary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
         </div>
       </div>
+      
       <div class="card">
         <div class="card-icon">
           <i class="fas fa-laptop-code"></i>
         </div>
         <h3>Portfolio Website</h3>
         <p>Personal responsive portfolio with animations and dark/light mode, hosted on GitHub Pages.</p>
+        <div class="tech-used">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
         <div class="card-footer">
           <a href="https://iamnani9.github.io/portfolio-website/" target="_blank" class="btn btn-small">
             <i class="fas fa-external-link-alt"></i> Live Site
           </a>
         </div>
       </div>
+      
       <div class="card">
         <div class="card-icon">
           <i class="fas fa-film"></i>
         </div>
         <h3>Netflix Clone</h3>
         <p>Responsive frontend clone with search functionality, carousel effects, and movie details modal.</p>
+        <div class="tech-used">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">TMDB API</span>
+        </div>
         <div class="card-footer">
           <a href="#" class="btn btn-small btn-disabled">
             <i class="fas fa-hourglass-half"></i> Coming Soon
           </a>
         </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-film"></i>
+        </div>
+        <h3>First Frame</h3>
+        <p>Never miss the First Day First Show</p>
+        <!-- <div class="tech-used">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">TMDB API</span>
+        </div> -->
+        <div class="card-footer">
+          <a href="#" class="btn btn-small btn-disabled">
+            <i class="fas fa-hourglass-half"></i> Coming Soon
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="section-header">
+      <h2>My Services</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Web Development</h3>
+        <p>Custom website development with responsive design and modern technologies.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3>Responsive Design</h3>
+        <p>Websites that look great on all devices from desktops to smartphones.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>Discord Bots</h3>
+        <p>Custom Discord bots for moderation, music, and community engagement.</p>
       </div>
     </div>
   </section>
@@ -144,23 +292,47 @@
       <div class="section-divider"></div>
     </div>
     <div class="contact-content">
-      <p class="contact-text">Let's connect and collaborate! Feel free to reach out for opportunities or just to say hi.</p>
-      <div class="contact-methods">
-        <a href="mailto:twitternani574@gmail.com" class="contact-card">
-          <i class="fas fa-envelope"></i>
-          <h3>Email</h3>
-          <p>twitternani574@gmail.com</p>
-        </a>
-        <a href="https://github.com/iamnani9" target="_blank" class="contact-card">
-          <i class="fab fa-github"></i>
-          <h3>GitHub</h3>
-          <p>@iamnani9</p>
-        </a>
-        <a href="https://www.linkedin.com/in/swami-nani-148736377/" target="_blank" class="contact-card">
-          <i class="fab fa-linkedin-in"></i>
-          <h3>LinkedIn</h3>
-          <p>Swami Nani</p>
-        </a>
+      <p class="contact-text">Have a project in mind or want to collaborate? Feel free to reach out!</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>twitternani574@gmail.com</p>
+            <a href="mailto:twitternani574@gmail.com" class="info-link">Send Email</a>
+          </div>
+          
+          <div class="info-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>@iamnani9</p>
+            <a href="https://github.com/iamnani9" target="_blank" class="info-link">Visit Profile</a>
+          </div>
+          
+          <div class="info-card">
+            <i class="fab fa-linkedin-in"></i>
+            <h3>LinkedIn</h3>
+            <p>Swami Nani</p>
+            <a href="https://www.linkedin.com/in/swami-nani-148736377/" target="_blank" class="info-link">Connect</a>
+          </div>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
@@ -170,6 +342,7 @@
       <div class="footer-logo">NANI</div>
       <div class="footer-links">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
@@ -180,8 +353,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Made with <i class="fas fa-heart pulse"></i> by Nani | © 2025 All Rights Reserved</p>
+      <p>Made with <i class="fas fa-heart pulse"></i> by Nani | © <span id="current-year"></span> All Rights Reserved</p>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
